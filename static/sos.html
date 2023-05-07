@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>비대면 주문 시스템</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+
+      header, footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .menu-item {
+        width: 32%;
+        margin-bottom: 40px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+      }
+
+      .menu-item img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .menu-item h3 {
+        font-size: 24px;
+        margin: 0;
+        padding: 10px 20px;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .menu-item p {
+        font-size: 16px;
+        margin: 0;
+        padding: 20px;
+        line-height: 1.5;
+      }
+      .menu-item button {
+         background-color: #4CAF50;
+         border: none;
+         border-radius: 4px;
+         color: #fff;
+         cursor: pointer;
+         font-size: 16px;
+         margin-top: 10px;
+         padding: 10px;
+         width: 100%;
+      }
+      .menu-type-button {
+       background-color: #F2F2F2;
+       border: none;
+       color: #333;
+       padding: 40px;
+       padding-top:20px;
+       padding-bottom:20px;
+       font-size: 16px;
+       font-weight: bold;
+       cursor: pointer;
+       
+       margin:10px;
+    }
+
+      .menu-type-button.active {
+      background-color: #333;
+      color: #fff;
+    }
+    .menu-types{
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      left: 0;
+      top: 50;
+    }
+    </style>
+    
+  </head>
+  <body>
+    <header>
+      <h1>비대면 주문 시스템</h1>
+    </header>
+    
+    
+    <div class="menu-types">
+        <button class="menu-type-button active" data-menu-type="all">전체</button>
+        <button class="menu-type-button" data-menu-type="korean">한식</button>
+        <button class="menu-type-button" data-menu-type="side-dish">안주</button>
+        <button class="menu-type-button" data-menu-type="drink">주류</button>
+      </div>
+    
+    <div class="wrapper">
+       
+      <div class="menu-item korean">
+        <img src="C:\Users\jj_go\Desktop\프론트엔드 공부\닥치고만들어봐\곱창전골.jpg" alt="곱창전골">
+        <h3>곱창전골</h3>
+        <p>곱이 꽉 찬 소곱창전골입니다. </p>
+        <button id = "order-button">주문하기</button>
+      </div>
+     
+      <div class="menu-item side-dish">
+        <img src="C:\Users\jj_go\Desktop\프론트엔드 공부\닥치고만들어봐\후라이드치킨.jpg" alt="후라이드치킨">
+        <h3>후라이드치킨</h3>
+        <p>BBQ, BHC를 능가하는 바삭함</p>
+        <button>주문하기</button>
+      </div>
+
+      <div class="menu-item korean">
+        <img src="C:\Users\jj_go\Desktop\프론트엔드 공부\닥치고만들어봐\떡볶이.jpg" alt="떡볶이">
+        <h3>떡볶이</h3>
+        <p>순한맛/중간맛/매운맛/사망맛 골라주세요</p>
+        <button>주문하기</button>
+      </div>
+
+      <div class="menu-item korean">
+        <img src="C:\Users\jj_go\Desktop\프론트엔드 공부\닥치고만들어봐\김치찌개.jpg" alt="김치찌개">
+        <h3>김치찌개</h3>
+        <p>돼지고기가 들어간 김치찌개</p>
+        <button>주문하기</button>
+      </div>
+
+      <div class="menu-item side-dish">
+        <img src="C:\Users\jj_go\Desktop\프론트엔드 공부\닥치고만들어봐\오뎅탕.jpg" alt="오뎅탕">
+        <h3>오뎅탕</h3>
+        <p>결정장애 왔을 때 최고의 안주</p>
+        <button>주문하기</button>
+      </div>
+      <div class="menu-item side-dish">
+        <img src="C:\Users\jj_go\Desktop\프론트엔드 공부\닥치고만들어봐\감자튀김.jpg" alt="감자튀김">
+        <h3>감자튀김</h3>
+        <p>맘스터치 감자튀김. 내가가르침</p>
+        <button>주문하기</button>
+      </div>
+    
+      <div class="menu-item drink">
+        <img src="C:\Users\jj_go\Desktop\프론트엔드 공부\닥치고만들어봐\생맥주.jpg" alt="생맥주">
+        <h3>생맥주 500CC</h3>
+        <p>아사이 500cc 생맥주</p>
+        <button>주문하기</button>
+      </div>
+
+      <div class="menu-item drink">
+        <img src="C:\Users\jj_go\Desktop\프론트엔드 공부\닥치고만들어봐\진로.jpg" alt="진로소주">
+        <h3>소주</h3>
+        <p>진로/참이슬</p>
+        <button>주문하기</button>
+      </div>
+    
+    
+    <div class="menu-item drink">
+      <img src="C:\Users\jj_go\Desktop\프론트엔드 공부\닥치고만들어봐\매화수.jpg" alt="매화수">
+      <h3>매화수</h3>
+      <p>달콤한 매화수/숙취 조심</p>
+      <button>주문하기</button>
+    </div>
+  </div>
+    <footer>
+      <p>주소 : 서울특별시 마포구 와우산로 94 홍익대학교 | 전화번호 : 010-2803-1960 | 대표 : 이재진</p>
+    </footer>
+    
+    <script>
+        const items = document.querySelectorAll(".menu-item");
+        const menuTypeButtons = document.querySelectorAll(".menu-type-button");
+
+        function showAlert() {
+          alert("주문이 완료되었습니다!");
+        }
+
+        items.forEach(item => {
+          const button = item.querySelector("button");
+          button.onclick = showAlert;
+        });
+
+        menuTypeButtons.forEach(button => {
+          button.addEventListener("click", () => {
+            // 현재 클릭된 버튼에 active 클래스 추가
+            button.classList.add("active");
+
+            // 다른 버튼에서 active 클래스 제거
+            menuTypeButtons.forEach(otherButton => {
+              if (otherButton !== button) {
+                otherButton.classList.remove("active");
+              }
+            });
+
+            //해당 메뉴 종류에 해당하는 메뉴만 보여주도록 변경
+            const menuType = button.dataset.menuType;
+
+            items.forEach(item => {
+              if (menuType === "all" || item.classList.contains(menuType)) {
+                item.style.display = "block";
+              } else {
+                item.style.display = "none";
+              }
+            });
+          });
+        });
+    </script>
+  </body>
+</html>
